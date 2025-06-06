@@ -1,0 +1,27 @@
+{
+  "Resources": {
+    "HighCPUAlarm": {
+      "Type": "AWS::CloudWatch::Alarm",
+      "Properties": {
+        "AlarmName": "HighCPUAlarm",
+        "MetricName": "CPUUtilization",
+        "Namespace": "AWS/EC2",
+        "Statistic": "Average",
+        "Period": 60,
+        "EvaluationPeriods": 5,
+        "Threshold": 80,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "AlarmActions": [
+          "arn:aws:sns:ap-south-1:450044567651:HighCPUAlarm"
+        ],
+        "Dimensions": [
+          {
+            "Name": "InstanceId",
+            "Value": "i-0db22894b8a035a9b"
+          }
+        ],
+        "Unit": "Percent"
+      }
+    }
+  }
+}

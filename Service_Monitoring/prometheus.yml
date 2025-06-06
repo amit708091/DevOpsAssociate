@@ -1,0 +1,5 @@
+scrape_configs:
+  - job_name: 'ec2_node'
+    static_configs:
+      - targets: ['65.2.74.13:9100']  
+    scrape_interval: 15s
